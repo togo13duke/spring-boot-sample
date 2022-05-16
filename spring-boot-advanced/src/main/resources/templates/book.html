@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Boo詳細</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css">
+</head>
+<body th:object="${book}">
+
+<div class="container" style="max-width: 600px;margin-top: 50px">
+    <h3 class="page-header">Book詳細</h3>
+    <div class="well">
+        <p>
+            <strong>書籍名: </strong><span th:text="*{name}">リーダブルコード</span>
+        </p>
+        <p>
+            <strong>作者: </strong><span th:text="*{author}">Tom</span>
+        </p>
+
+        <p>
+            <strong>説明: </strong><span th:text="*{description}">プログラマ必ず読むべき</span>
+        </p>
+
+        <p th:switch="*{status}">
+            <strong>状態: </strong>
+            <span th:case="0">未読</span>
+            <span th:case="1">読書中</span>
+            <span th:case="2">完読</span>
+        </p>
+    </div>
+</div>
+
+
+<script th:src="@{/js/jquery-3.3.1.min.js}" src="../static/js/jquery-3.3.1.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>

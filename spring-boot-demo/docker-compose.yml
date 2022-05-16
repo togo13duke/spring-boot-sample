@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+  db:
+    build: ./docker/mysql
+    image: mysql:5.7
+    ## 手動起動でいいや
+    ## restart:  always
+    environment:
+      MYSQL_DATABASE: book
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+    - "3314:3306"
+    volumes:
+      ## 初期SQL
+    - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+      ## 設定ファイル
+    - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      ## ログ
+    - ./logs:/var/log/mysql
+      ## データ永続化
+    - ./docker/mysql/data:/var/lib/mysql

@@ -1,0 +1,34 @@
+server:
+  port: 8080
+  #Servlet:
+    #context-path: /api
+
+logging:
+  level:
+    root: info
+    com.ds: debug
+  file: logs/debug.log
+
+spring:
+  datasource:
+    # MySQL
+    url: jdbc:mysql://localhost:3314/book
+    username: user
+    password: password
+    connectionProperties: useUnicode=true&characterEncoding=UTF-8&serverTimezone=JST
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        # MySQL
+        dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+
+
+

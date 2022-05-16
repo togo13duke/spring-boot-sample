@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    mode: HTML
+
+
+book:
+  name: インターネットの世界観
+  author: 田中洋一
+  isbn: ${random.uuid}
+  desctiption: ${book.name},この本は悪くない

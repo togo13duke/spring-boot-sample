@@ -1,0 +1,9 @@
+server:
+  port: 8081
+  #Sservlet:
+    #context-path: /api
+logging:
+  level:
+    root: warn
+    com.ds: info
+  file: logs/my.log
